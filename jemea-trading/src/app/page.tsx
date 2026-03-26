@@ -23,37 +23,37 @@ const products = [
     title: "Ethiopian Coffee Beans",
     description:
       "Premium Arabica coffee beans sourced from the birthplace of coffee. Sun-dried and washed varieties from Sidamo, Yirgacheffe, and Harar regions.",
-    image: "/images/coffee.svg",
+    image: "/images/coffee_beans.png",
   },
   {
     title: "Sesame Seeds",
     description:
       "High-quality Humera and Wollega sesame seeds, prized globally for their rich oil content and distinctive nutty flavor profile.",
-    image: "/images/sesame.svg",
+    image: "/images/sesame_seeds.png",
   },
   {
     title: "Niger Seeds",
     description:
       "Ethiopian niger seeds (noug) with exceptional oil yield, cultivated in the highlands for purity and nutritional richness.",
-    image: "/images/niger-seeds.svg",
+    image: "/images/niger_seeds.png",
   },
   {
     title: "Green Mung Beans",
     description:
       "Organic green mung beans with high protein content, carefully sorted and graded to meet international export standards.",
-    image: "/images/mung-beans.svg",
+    image: "/images/green_mung_beans.png",
   },
   {
     title: "Soya Beans",
     description:
       "Non-GMO soya beans from Ethiopia's fertile soils, processed and packaged for international markets with strict quality control.",
-    image: "/images/soya.svg",
+    image: "/images/soya_beans.png",
   },
   {
     title: "Peanuts",
     description:
       "Bold kernel peanuts with superior taste and crunch. Sourced from select Ethiopian farms and graded to international standards.",
-    image: "/images/peanuts.svg",
+    image: "/images/peanut_beans.png",
   },
 ];
 
@@ -244,7 +244,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-72 h-72 relative">
                       <Image
-                        src="/images/coffee.svg"
+                        src="/images/coffee_beans.png"
                         alt="Ethiopian Coffee"
                         fill
                         className="object-contain drop-shadow-2xl"
@@ -261,7 +261,7 @@ export default function HomePage() {
                   className="absolute -top-4 -right-4 w-24 h-24"
                 >
                   <Image
-                    src="/images/sesame.svg"
+                    src="/images/sesame_seeds.png"
                     alt="Sesame Seeds"
                     fill
                     className="object-contain opacity-80"
@@ -278,7 +278,7 @@ export default function HomePage() {
                   className="absolute -bottom-6 -left-6 w-28 h-28"
                 >
                   <Image
-                    src="/images/peanuts.svg"
+                    src="/images/peanut_beans.png"
                     alt="Peanuts"
                     fill
                     className="object-contain opacity-80"
@@ -404,10 +404,10 @@ export default function HomePage() {
               <div className="relative p-4">
                 <div className="relative aspect-[4/3] bg-[var(--secondary)] overflow-hidden">
                   <Image
-                    src="/images/coffee.svg"
-                    alt="Ethiopian Agriculture"
+                    src="/images/bag_of_peanut_coffe_seeds.png"
+                    alt="Ethiopian Agricultural Products"
                     fill
-                    className="object-contain p-8"
+                    className="object-cover"
                   />
                   {/* Angular overlay */}
                   <div
@@ -493,17 +493,17 @@ export default function HomePage() {
               {
                 title: "Seeds, Beans & Nuts",
                 desc: "Premium Ethiopian agricultural exports meeting international quality standards.",
-                image: "/images/sesame.svg",
+                image: "/images/bag_of_peanut_coffe_seeds.png",
               },
               {
                 title: "Polymer & Plastic Materials",
                 desc: "High-quality raw materials for industrial and manufacturing needs.",
-                image: "/images/coffee.svg",
+                image: "/images/polymer_and_plastic_raw_materials.png",
               },
               {
                 title: "Vehicle Imports",
                 desc: "BYD, Toyota Land Cruisers, and Sino trucks sourced for the Ethiopian market.",
-                image: "/images/coffee.svg",
+                image: "/images/byd_land_cruiser_sino_truck_cars.png",
               },
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 0.1}>
@@ -513,7 +513,7 @@ export default function HomePage() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-contain p-10 transition-transform duration-700 group-hover:scale-110"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                   <div className="p-6 pt-5">

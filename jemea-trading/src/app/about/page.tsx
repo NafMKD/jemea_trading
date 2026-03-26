@@ -153,10 +153,10 @@ export default function AboutPage() {
               <div className="relative p-4">
                 <div className="aspect-[3/4] bg-[var(--secondary)] relative overflow-hidden">
                   <Image
-                    src="/images/coffee.svg"
-                    alt="Jemea Trading Team"
+                    src="/images/top_view_of_addis_ababa.png"
+                    alt="Addis Ababa, Ethiopia"
                     fill
-                    className="object-contain p-8"
+                    className="object-cover"
                   />
                 </div>
                 <div className="absolute bottom-4 left-4 w-36 h-36 bg-[var(--accent)] flex items-center justify-center z-10">

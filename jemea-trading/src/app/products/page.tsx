@@ -34,7 +34,7 @@ const products: Product[] = [
       "Grade: Premium Export Quality",
       "Certifications: Phytosanitary compliant",
     ],
-    image: "/images/coffee.svg",
+    image: "/images/coffee_beans.png",
   },
   {
     id: "sesame",
@@ -49,7 +49,7 @@ const products: Product[] = [
       "Grade: Export Premium",
       "Packaging: 25kg/50kg bags",
     ],
-    image: "/images/sesame.svg",
+    image: "/images/sesame_seeds.png",
   },
   {
     id: "niger",
@@ -64,7 +64,7 @@ const products: Product[] = [
       "Grade: Export Quality",
       "Use: Cooking oil, Bird feed",
     ],
-    image: "/images/niger-seeds.svg",
+    image: "/images/niger_seeds.png",
   },
   {
     id: "mung",
@@ -79,7 +79,7 @@ const products: Product[] = [
       "Certification: Organic available",
       "Markets: Asia, Middle East",
     ],
-    image: "/images/mung-beans.svg",
+    image: "/images/green_mung_beans.png",
   },
   {
     id: "soya",
@@ -94,7 +94,7 @@ const products: Product[] = [
       "Moisture: <13%",
       "Packaging: Customizable",
     ],
-    image: "/images/soya.svg",
+    image: "/images/soya_beans.png",
   },
   {
     id: "peanuts",
@@ -109,7 +109,7 @@ const products: Product[] = [
       "Moisture: <8%",
       "Use: Snacking, Confectionery, Oil",
     ],
-    image: "/images/peanuts.svg",
+    image: "/images/peanut_beans.png",
   },
   {
     id: "castor",
@@ -124,7 +124,7 @@ const products: Product[] = [
       "Applications: Pharma, Cosmetics",
       "Packaging: 50kg bags",
     ],
-    image: "/images/castor.svg",
+    image: "/images/castor_seeds.png",
   },
   {
     id: "polymer",
@@ -139,7 +139,7 @@ const products: Product[] = [
       "Source: Global suppliers",
       "Delivery: Reliable logistics",
     ],
-    image: "/images/coffee.svg",
+    image: "/images/polymer_and_plastic_raw_materials.png",
   },
   {
     id: "vehicles",
@@ -154,7 +154,7 @@ const products: Product[] = [
       "Condition: Brand New",
       "Service: End-to-end import",
     ],
-    image: "/images/coffee.svg",
+    image: "/images/byd_land_cruiser_sino_truck_cars.png",
   },
 ];
 
