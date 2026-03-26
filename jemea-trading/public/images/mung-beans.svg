@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" aria-hidden="true">
+  <defs>
+    <linearGradient id="mung" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" style="stop-color:#15803d"/>
+      <stop offset="100%" style="stop-color:#2c1810;stop-opacity:0.35"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="140" cy="165" rx="22" ry="32" fill="url(#mung)" transform="rotate(-25 140 165)"/>
+  <ellipse cx="185" cy="145" rx="20" ry="30" fill="#15803d" transform="rotate(12 185 145)"/>
+  <ellipse cx="230" cy="170" rx="21" ry="31" fill="url(#mung)" transform="rotate(35 230 170)"/>
+  <ellipse cx="165" cy="210" rx="19" ry="29" fill="#15803d" transform="rotate(-8 165 210)"/>
+  <ellipse cx="215" cy="205" rx="20" ry="30" fill="#15803d" transform="rotate(-42 215 205)"/>
+  <ellipse cx="265" cy="195" rx="18" ry="28" fill="url(#mung)" transform="rotate(18 265 195)"/>
+  <ellipse cx="195" cy="250" rx="21" ry="31" fill="#15803d" transform="rotate(22 195 250)"/>
+  <ellipse cx="245" cy="245" rx="19" ry="29" fill="#15803d" transform="rotate(-28 245 245)"/>
+  <ellipse cx="290" cy="220" rx="17" ry="26" fill="url(#mung)" transform="rotate(48 290 220)" opacity="0.9"/>
+  <ellipse cx="120" cy="220" rx="18" ry="27" fill="#15803d" transform="rotate(55 120 220)" opacity="0.85"/>
+  <!-- Hilum marks -->
+  <ellipse cx="178" cy="152" rx="3" ry="4" fill="#e0c9ac" opacity="0.35"/>
+  <ellipse cx="228" cy="178" rx="2.5" ry="3.5" fill="#e0c9ac" opacity="0.3"/>
+  <ellipse cx="208" cy="218" rx="3" ry="4" fill="#e0c9ac" opacity="0.28"/>
+</svg>

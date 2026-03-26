@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" aria-hidden="true">
+  <defs>
+    <linearGradient id="cast" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c1810"/>
+      <stop offset="45%" style="stop-color:#C67B5C"/>
+      <stop offset="100%" style="stop-color:#b8860b"/>
+    </linearGradient>
+    <linearGradient id="cast2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#15803d;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#2c1810"/>
+    </linearGradient>
+  </defs>
+  <!-- Primary seed (oval with mottled feel) -->
+  <ellipse cx="200" cy="205" rx="42" ry="62" fill="url(#cast)" transform="rotate(-12 200 205)"/>
+  <ellipse cx="188" cy="185" rx="14" ry="22" fill="#e0c9ac" opacity="0.35" transform="rotate(-25 188 185)"/>
+  <ellipse cx="215" cy="228" rx="10" ry="16" fill="#15803d" opacity="0.25" transform="rotate(20 215 228)"/>
+  <path d="M175 195 Q200 205 225 198" fill="none" stroke="#2c1810" stroke-width="1.5" opacity="0.2"/>
+  <!-- Second seed -->
+  <ellipse cx="275" cy="165" rx="28" ry="42" fill="url(#cast2)" transform="rotate(35 275 165)"/>
+  <ellipse cx="268" cy="152" rx="8" ry="12" fill="#b8860b" opacity="0.4" transform="rotate(30 268 152)"/>
+  <!-- Third -->
+  <ellipse cx="130" cy="235" rx="26" ry="38" fill="url(#cast)" transform="rotate(22 130 235)" opacity="0.88"/>
+  <ellipse cx="122" cy="222" rx="7" ry="11" fill="#C67B5C" opacity="0.45" transform="rotate(15 122 222)"/>
+  <!-- Caruncle hint (abstract bump) -->
+  <ellipse cx="168" cy="248" rx="8" ry="10" fill="#e0c9ac" opacity="0.5" transform="rotate(-40 168 248)"/>
+</svg>
