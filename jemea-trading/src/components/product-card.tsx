@@ -25,15 +25,13 @@ export function ProductCard({ title, description, image, index }: ProductCardPro
           "relative overflow-hidden bg-[var(--card)] border border-[var(--border)]",
           "transition-all duration-500",
           "hover:shadow-2xl hover:-translate-y-2",
-          "hover:border-[var(--accent)]"
+          "hover:border-[var(--primary)]"
         )}
       >
-        {/* Angular accent corner */}
         <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden z-10">
-          <div className="absolute top-0 right-0 w-[90px] h-[2px] bg-[var(--accent)] origin-top-right rotate-[-45deg] translate-x-[15px] translate-y-[22px] transition-all duration-500 group-hover:w-[120px]" />
+          <div className="absolute top-0 right-0 w-[90px] h-[2px] bg-[var(--primary)] origin-top-right rotate-[-45deg] translate-x-[15px] translate-y-[22px] transition-all duration-500 group-hover:w-[120px]" />
         </div>
 
-        {/* Image container */}
         <div className="relative h-52 overflow-hidden bg-[var(--secondary)]">
           <div className="absolute inset-0 flex items-center justify-center p-10">
             <Image
@@ -46,19 +44,17 @@ export function ProductCard({ title, description, image, index }: ProductCardPro
           </div>
         </div>
 
-        {/* Content */}
-        <div className="relative px-6 pb-6 pt-5">
-          <h3 className="font-heading text-lg font-bold text-[var(--foreground)] mb-2 group-hover:text-[var(--accent)] transition-colors duration-300">
+        <div className="relative px-6 pb-6 pt-5 flex flex-col gap-3">
+          <h3 className="font-heading text-lg font-bold text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-300">
             {title}
           </h3>
           <p className="font-body text-sm text-[var(--muted-foreground)] leading-relaxed">
             {description}
           </p>
 
-          {/* Bottom accent line */}
-          <div className="mt-5 flex items-center gap-2">
-            <div className="h-[2px] w-0 bg-[var(--accent)] transition-all duration-500 group-hover:w-12" />
-            <span className="text-xs font-body uppercase tracking-wider text-[var(--accent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+          <div className="mt-2 flex items-center gap-2">
+            <div className="h-[2px] w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-12" />
+            <span className="text-xs font-body uppercase tracking-wider text-[var(--primary)] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               Learn More
             </span>
           </div>

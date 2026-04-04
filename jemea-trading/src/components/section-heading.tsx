@@ -25,13 +25,13 @@ export function SectionHeading({
           <span
             className={cn(
               "inline-flex items-center gap-3 font-body text-[11px] uppercase tracking-[0.25em] font-semibold mb-4",
-              light ? "text-gold-400" : "text-[var(--accent)]"
+              light ? "text-brand-300" : "text-[var(--primary)]"
             )}
           >
-            <span className={cn("w-8 h-[2px]", light ? "bg-gold-400" : "bg-[var(--accent)]")} />
+            <span className={cn("w-8 h-[2px]", light ? "bg-brand-400" : "bg-[var(--primary)]")} />
             {label}
             {align === "center" && (
-              <span className={cn("w-8 h-[2px]", light ? "bg-gold-400" : "bg-[var(--accent)]")} />
+              <span className={cn("w-8 h-[2px]", light ? "bg-brand-400" : "bg-[var(--primary)]")} />
             )}
           </span>
         </Reveal>
@@ -52,7 +52,7 @@ export function SectionHeading({
             className={cn(
               "mt-4 font-body text-base max-w-2xl leading-relaxed",
               align === "center" && "mx-auto",
-              light ? "text-coffee-300" : "text-[var(--muted-foreground)]"
+              light ? "text-white/75" : "text-[var(--muted-foreground)]"
             )}
           >
             {subtitle}

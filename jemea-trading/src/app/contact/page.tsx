@@ -92,28 +92,28 @@ export default function ContactPage() {
     <>
       {/* ===== HERO ===== */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-coffee-950" />
+        <div className="absolute inset-0 bg-[var(--hero-bg)]" />
         <div className="absolute inset-0 ethiopian-pattern opacity-30" />
         <div
-          className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-bl from-gold-500/8 to-transparent"
+          className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-bl from-brand-500/10 to-transparent"
           style={{ clipPath: "polygon(40% 0, 100% 0, 100% 100%, 0% 100%)" }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto site-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-flex items-center gap-3 font-body text-xs uppercase tracking-[0.3em] font-semibold text-gold-400 mb-6">
-              <span className="w-12 h-[2px] bg-gold-500" />
+            <span className="inline-flex items-center gap-3 font-body text-xs uppercase tracking-[0.3em] font-semibold text-brand-300 mb-6">
+              <span className="w-12 h-[2px] bg-brand-400" />
               Get In Touch
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] max-w-4xl">
               Let&apos;s Build a{" "}
-              <span className="text-gold-400">Partnership</span>
+              <span className="text-brand-300">Partnership</span>
             </h1>
-            <p className="mt-6 font-body text-base text-coffee-300 max-w-2xl leading-relaxed">
+            <p className="mt-6 font-body text-base text-white/75 max-w-2xl leading-relaxed">
               Whether you&apos;re looking to source premium Ethiopian products or
               discuss import solutions, we&apos;re here to help.
             </p>
@@ -128,15 +128,13 @@ export default function ContactPage() {
 
       {/* ===== CONTACT FORM + INFO ===== */}
       <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto site-gutter">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
-            {/* Form */}
             <div className="lg:col-span-3">
               <Reveal>
                 <div className="bg-[var(--card)] border border-[var(--border)] p-8 md:p-12 relative">
-                  {/* Corner accent */}
-                  <div className="absolute top-0 left-0 w-16 h-[2px] bg-[var(--accent)]" />
-                  <div className="absolute top-0 left-0 h-16 w-[2px] bg-[var(--accent)]" />
+                  <div className="absolute top-0 left-0 w-16 h-[2px] bg-[var(--primary)]" />
+                  <div className="absolute top-0 left-0 h-16 w-[2px] bg-[var(--primary)]" />
 
                   <h2 className="font-heading text-2xl font-bold text-[var(--foreground)] mb-2">
                     Send Us a Message
@@ -206,7 +204,7 @@ export default function ContactPage() {
                         <select
                           id="product"
                           name="product"
-                          className="flex h-12 w-full border-2 border-[var(--border)] bg-transparent px-4 py-2 font-body text-base text-[var(--foreground)] transition-colors focus-visible:outline-none focus-visible:border-[var(--accent)] focus-visible:ring-1 focus-visible:ring-[var(--accent)] cursor-pointer"
+                          className="flex h-12 w-full border-2 border-[var(--border)] bg-transparent px-4 py-2 font-body text-base text-[var(--foreground)] transition-colors focus-visible:outline-none focus-visible:border-[var(--primary)] focus-visible:ring-1 focus-visible:ring-[var(--primary)] cursor-pointer"
                         >
                           <option value="">Select a product</option>
                           <option value="coffee">Ethiopian Coffee</option>
@@ -238,15 +236,14 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    {/* Status messages */}
                     {status === "success" && (
                       <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center gap-3 p-4 bg-earth-50 dark:bg-earth-900/30 border border-earth-200 dark:border-earth-700"
+                        className="flex items-center gap-3 p-4 bg-brand-50 border border-brand-200"
                       >
-                        <CheckCircle className="w-5 h-5 text-earth-500 shrink-0" />
-                        <p className="font-body text-sm text-earth-700 dark:text-earth-300">
+                        <CheckCircle className="w-5 h-5 text-brand-500 shrink-0" />
+                        <p className="font-body text-sm text-brand-700">
                           Message sent successfully! We&apos;ll get back to you shortly.
                         </p>
                       </motion.div>
@@ -289,15 +286,14 @@ export default function ContactPage() {
               </Reveal>
             </div>
 
-            {/* Contact Info */}
             <div className="lg:col-span-2">
               <div className="space-y-6">
                 {contactInfo.map((item, i) => (
                   <Reveal key={item.title} delay={i * 0.1} direction="right">
-                    <div className="group p-6 border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:border-[var(--accent)]">
+                    <div className="group p-6 border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:border-[var(--primary)]">
                       <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 flex items-center justify-center bg-[var(--accent)]/10 shrink-0">
-                          <item.icon className="w-5 h-5 text-[var(--accent)]" />
+                        <div className="w-10 h-10 flex items-center justify-center bg-[var(--primary)]/10 shrink-0">
+                          <item.icon className="w-5 h-5 text-[var(--primary)]" />
                         </div>
                         <div>
                           <h4 className="font-heading text-base font-bold text-[var(--foreground)] mb-1.5">
@@ -318,12 +314,11 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Map placeholder */}
               <Reveal delay={0.4} direction="right">
                 <div className="mt-6 relative h-48 bg-[var(--secondary)] border border-[var(--border)] overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                      <MapPin className="w-8 h-8 text-[var(--accent)] mx-auto mb-2" />
+                      <MapPin className="w-8 h-8 text-[var(--primary)] mx-auto mb-2" />
                       <p className="font-body text-sm text-[var(--muted-foreground)]">
                         Addis Ababa, Ethiopia
                       </p>
@@ -339,7 +334,7 @@ export default function ContactPage() {
 
       {/* ===== FAQ TEASER ===== */}
       <section className="py-20 md:py-28 bg-[var(--secondary)] ethiopian-pattern">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto site-gutter">
           <SectionHeading
             label="Common Questions"
             title="Frequently Asked"
@@ -365,11 +360,11 @@ export default function ContactPage() {
               },
             ].map((faq, i) => (
               <Reveal key={faq.q} delay={i * 0.08}>
-                <details className="group bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:border-[var(--accent)]">
+                <details className="group bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:border-[var(--primary)]">
                   <summary className="flex items-center justify-between p-5 cursor-pointer font-heading text-base font-bold text-[var(--foreground)] list-none">
                     {faq.q}
-                    <span className="ml-4 w-6 h-6 flex items-center justify-center bg-[var(--accent)]/10 shrink-0 transition-transform duration-300 group-open:rotate-45">
-                      <span className="text-[var(--accent)] font-body text-lg leading-none">+</span>
+                    <span className="ml-4 w-6 h-6 flex items-center justify-center bg-[var(--primary)]/10 shrink-0 transition-transform duration-300 group-open:rotate-45">
+                      <span className="text-[var(--primary)] font-body text-lg leading-none">+</span>
                     </span>
                   </summary>
                   <div className="px-5 pb-5">

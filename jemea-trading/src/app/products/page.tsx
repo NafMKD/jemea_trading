@@ -170,28 +170,28 @@ export default function ProductsPage() {
     <>
       {/* ===== HERO ===== */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-coffee-950" />
+        <div className="absolute inset-0 bg-[var(--hero-bg)]" />
         <div className="absolute inset-0 ethiopian-pattern opacity-30" />
         <div
-          className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-bl from-gold-500/8 to-transparent"
+          className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-bl from-brand-500/10 to-transparent"
           style={{ clipPath: "polygon(40% 0, 100% 0, 100% 100%, 0% 100%)" }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto site-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-flex items-center gap-3 font-body text-xs uppercase tracking-[0.3em] font-semibold text-gold-400 mb-6">
-              <span className="w-12 h-[2px] bg-gold-500" />
+            <span className="inline-flex items-center gap-3 font-body text-xs uppercase tracking-[0.3em] font-semibold text-brand-300 mb-6">
+              <span className="w-12 h-[2px] bg-brand-400" />
               Our Products
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] max-w-4xl">
               Premium Products,{" "}
-              <span className="text-gold-400">Global Standards</span>
+              <span className="text-brand-300">Global Standards</span>
             </h1>
-            <p className="mt-6 font-body text-base text-coffee-300 max-w-2xl leading-relaxed">
+            <p className="mt-6 font-body text-base text-white/75 max-w-2xl leading-relaxed">
               Discover our comprehensive range of export and import products,
               each meeting the highest international quality standards.
             </p>
@@ -206,8 +206,7 @@ export default function ProductsPage() {
 
       {/* ===== PRODUCTS GRID ===== */}
       <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Filter tabs */}
+        <div className="max-w-7xl mx-auto site-gutter">
           <Reveal>
             <div className="flex items-center justify-center gap-2 mb-16">
               {(["all", "export", "import"] as const).map((tab) => (
@@ -217,8 +216,8 @@ export default function ProductsPage() {
                   className={cn(
                     "px-6 py-2.5 font-body text-xs uppercase tracking-[0.15em] font-semibold transition-all duration-300 cursor-pointer border",
                     filter === tab
-                      ? "bg-[var(--accent)] text-[var(--accent-foreground)] border-[var(--accent)]"
-                      : "bg-transparent text-[var(--muted-foreground)] border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                      ? "bg-[var(--primary)] text-[var(--primary-foreground)] border-[var(--primary)]"
+                      : "bg-transparent text-[var(--muted-foreground)] border-[var(--border)] hover:border-[var(--primary)] hover:text-[var(--primary)]"
                   )}
                 >
                   {tab === "all" ? "All Products" : `${tab} Products`}
@@ -227,7 +226,6 @@ export default function ProductsPage() {
             </div>
           </Reveal>
 
-          {/* Grid */}
           <motion.div
             layout
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -248,29 +246,26 @@ export default function ProductsPage() {
                       "group relative cursor-pointer",
                       "bg-[var(--card)] border border-[var(--border)]",
                       "transition-all duration-500",
-                      "hover:shadow-2xl hover:-translate-y-2 hover:border-[var(--accent)]"
+                      "hover:shadow-2xl hover:-translate-y-2 hover:border-[var(--primary)]"
                     )}
                   >
-                    {/* Category badge */}
                     <div className="absolute top-4 left-4 z-10">
                       <span
                         className={cn(
                           "px-3 py-1 font-body text-[10px] uppercase tracking-wider font-semibold",
                           product.category === "export"
-                            ? "bg-earth-500 text-white"
-                            : "bg-terra-500 text-white"
+                            ? "bg-brand-500 text-white"
+                            : "bg-accent-500 text-white"
                         )}
                       >
                         {product.category}
                       </span>
                     </div>
 
-                    {/* Angular corner accent */}
                     <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden z-10">
-                      <div className="absolute top-0 right-0 w-[90px] h-[2px] bg-[var(--accent)] origin-top-right rotate-[-45deg] translate-x-[15px] translate-y-[22px] transition-all duration-500 group-hover:w-[120px]" />
+                      <div className="absolute top-0 right-0 w-[90px] h-[2px] bg-[var(--primary)] origin-top-right rotate-[-45deg] translate-x-[15px] translate-y-[22px] transition-all duration-500 group-hover:w-[120px]" />
                     </div>
 
-                    {/* Image */}
                     <div className="relative h-48 overflow-hidden bg-[var(--secondary)]">
                       <div className="absolute inset-0 flex items-center justify-center p-10">
                         <Image
@@ -283,17 +278,16 @@ export default function ProductsPage() {
                       </div>
                     </div>
 
-                    {/* Content */}
-                    <div className="px-6 pb-6 pt-5">
-                      <h3 className="font-heading text-lg font-bold text-[var(--foreground)] mb-2 group-hover:text-[var(--accent)] transition-colors duration-300">
+                    <div className="px-6 pb-6 pt-5 flex flex-col gap-3">
+                      <h3 className="font-heading text-lg font-bold text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-300">
                         {product.title}
                       </h3>
                       <p className="font-body text-sm text-[var(--muted-foreground)] leading-relaxed">
                         {product.shortDesc}
                       </p>
-                      <div className="mt-4 flex items-center gap-2">
-                        <div className="h-[2px] w-0 bg-[var(--accent)] transition-all duration-500 group-hover:w-8" />
-                        <span className="text-xs font-body uppercase tracking-wider text-[var(--accent)] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                      <div className="mt-2 flex items-center gap-2">
+                        <div className="h-[2px] w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-8" />
+                        <span className="text-xs font-body uppercase tracking-wider text-[var(--primary)] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                           Details
                         </span>
                       </div>
@@ -316,10 +310,8 @@ export default function ProductsPage() {
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
             onClick={() => setSelectedProduct(null)}
           >
-            {/* Backdrop */}
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
-            {/* Modal */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -328,18 +320,16 @@ export default function ProductsPage() {
               onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[var(--card)] border border-[var(--border)] shadow-2xl"
             >
-              {/* Close button */}
               <button
                 onClick={() => setSelectedProduct(null)}
-                className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-[var(--secondary)] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)] transition-colors cursor-pointer"
+                className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-[var(--secondary)] hover:bg-[var(--accent)] hover:text-white transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="grid md:grid-cols-2">
-                {/* Image side */}
-                <div className="relative h-64 md:h-auto bg-[var(--secondary)]">
+                <div className="relative h-64 md:h-auto min-h-[280px] bg-[var(--secondary)]">
                   <Image
                     src={selectedProduct.image}
                     alt={selectedProduct.title}
@@ -351,8 +341,8 @@ export default function ProductsPage() {
                       className={cn(
                         "px-3 py-1 font-body text-[10px] uppercase tracking-wider font-semibold",
                         selectedProduct.category === "export"
-                          ? "bg-earth-500 text-white"
-                          : "bg-terra-500 text-white"
+                          ? "bg-brand-500 text-white"
+                          : "bg-accent-500 text-white"
                       )}
                     >
                       {selectedProduct.category}
@@ -360,36 +350,41 @@ export default function ProductsPage() {
                   </div>
                 </div>
 
-                {/* Content side */}
-                <div className="p-6 md:p-8">
-                  <h2 className="font-heading text-2xl font-bold text-[var(--foreground)] mb-3">
-                    {selectedProduct.title}
-                  </h2>
-                  <p className="font-body text-sm text-[var(--muted-foreground)] leading-relaxed mb-5">
-                    {selectedProduct.fullDesc}
-                  </p>
+                <div className="p-6 md:p-8 pr-14 md:pr-16 flex flex-col gap-5">
+                  <div>
+                    <h2 className="font-heading text-2xl font-bold text-[var(--foreground)] mb-3">
+                      {selectedProduct.title}
+                    </h2>
+                    <p className="font-body text-sm text-[var(--muted-foreground)] leading-relaxed">
+                      {selectedProduct.fullDesc}
+                    </p>
+                  </div>
 
-                  <h4 className="font-body text-xs uppercase tracking-[0.15em] font-semibold text-[var(--accent)] mb-3">
-                    Specifications
-                  </h4>
-                  <ul className="space-y-2 mb-8">
-                    {selectedProduct.specs.map((spec) => (
-                      <li
-                        key={spec}
-                        className="flex items-start gap-2 font-body text-sm text-[var(--muted-foreground)]"
-                      >
-                        <span className="w-1.5 h-1.5 bg-[var(--accent)] rotate-45 mt-1.5 shrink-0" />
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
+                  <div>
+                    <h4 className="font-body text-xs uppercase tracking-[0.15em] font-semibold text-[var(--primary)] mb-3">
+                      Specifications
+                    </h4>
+                    <ul className="space-y-2">
+                      {selectedProduct.specs.map((spec) => (
+                        <li
+                          key={spec}
+                          className="flex items-start gap-2 font-body text-sm text-[var(--muted-foreground)]"
+                        >
+                          <span className="w-1.5 h-1.5 bg-[var(--primary)] rotate-45 mt-1.5 shrink-0" />
+                          {spec}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                  <Link href="/contact">
-                    <Button variant="accent" className="w-full group">
-                      Request a Quote
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </Link>
+                  <div className="mt-auto pt-2">
+                    <Link href="/contact">
+                      <Button variant="accent" className="w-full group">
+                        Request a Quote
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -399,17 +394,17 @@ export default function ProductsPage() {
 
       {/* ===== CTA ===== */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-coffee-950" />
+        <div className="absolute inset-0 bg-[var(--hero-bg)]" />
         <div className="absolute inset-0 ethiopian-pattern opacity-20" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto site-gutter text-center">
           <Reveal>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1]">
-              Need a <span className="text-gold-400">Custom Order?</span>
+              Need a <span className="text-brand-300">Custom Order?</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 font-body text-lg text-coffee-300 max-w-xl mx-auto">
+            <p className="mt-6 font-body text-base text-white/75 max-w-xl mx-auto leading-relaxed">
               We accommodate custom quantities, packaging, and specifications.
               Contact us to discuss your requirements.
             </p>

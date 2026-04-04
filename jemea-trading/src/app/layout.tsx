@@ -30,7 +30,7 @@ export default function RootLayout({
         <Providers>
           <div className="grain-overlay" aria-hidden="true" />
           <Navbar />
-          <main>{children}</main>
+          <main className="min-h-[50vh]">{children}</main>
           <Footer />
         </Providers>
       </body>

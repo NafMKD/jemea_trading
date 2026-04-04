@@ -64,28 +64,28 @@ export default function AboutPage() {
     <>
       {/* ===== HERO ===== */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-coffee-950" />
+        <div className="absolute inset-0 bg-[var(--hero-bg)]" />
         <div className="absolute inset-0 ethiopian-pattern opacity-30" />
         <div
-          className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-bl from-gold-500/8 to-transparent"
+          className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-bl from-brand-500/10 to-transparent"
           style={{ clipPath: "polygon(40% 0, 100% 0, 100% 100%, 0% 100%)" }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto site-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-flex items-center gap-3 font-body text-xs uppercase tracking-[0.3em] font-semibold text-gold-400 mb-6">
-              <span className="w-12 h-[2px] bg-gold-500" />
+            <span className="inline-flex items-center gap-3 font-body text-xs uppercase tracking-[0.3em] font-semibold text-brand-300 mb-6">
+              <span className="w-12 h-[2px] bg-brand-400" />
               Our Story
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] max-w-4xl">
               Rooted in Ethiopia,{" "}
-              <span className="text-gold-400">Reaching the World</span>
+              <span className="text-brand-300">Reaching the World</span>
             </h1>
-            <p className="mt-6 font-body text-base text-coffee-300 max-w-2xl leading-relaxed">
+            <p className="mt-6 font-body text-base text-white/75 max-w-2xl leading-relaxed">
               For over fifteen years, Jemea Trading PLC has been the bridge
               between Ethiopia&apos;s rich agricultural heritage and global markets
               that value quality, authenticity, and trust.
@@ -101,12 +101,12 @@ export default function AboutPage() {
 
       {/* ===== COMPANY STORY ===== */}
       <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto site-gutter">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <Reveal>
-                <span className="inline-flex items-center gap-3 font-body text-xs uppercase tracking-[0.25em] font-semibold text-[var(--accent)] mb-4">
-                  <span className="w-8 h-[2px] bg-[var(--accent)]" />
+                <span className="inline-flex items-center gap-3 font-body text-xs uppercase tracking-[0.25em] font-semibold text-[var(--primary)] mb-4">
+                  <span className="w-8 h-[2px] bg-[var(--primary)]" />
                   Who We Are
                 </span>
               </Reveal>
@@ -114,7 +114,7 @@ export default function AboutPage() {
               <Reveal delay={0.1}>
                 <h2 className="font-heading text-3xl md:text-4xl font-bold leading-[1.15] text-[var(--foreground)] mb-6">
                   The Dynamic Duo Behind{" "}
-                  <span className="text-[var(--accent)]">the Plow</span>
+                  <span className="text-[var(--primary)]">the Plow</span>
                 </h2>
               </Reveal>
 
@@ -167,7 +167,7 @@ export default function AboutPage() {
                     </span>
                   </div>
                 </div>
-                <div className="absolute top-0 right-0 w-full h-full border-2 border-[var(--accent)] -z-10" />
+                <div className="absolute top-0 right-0 w-full h-full border-2 border-[var(--primary)] -z-10" />
               </div>
             </Reveal>
           </div>
@@ -176,20 +176,20 @@ export default function AboutPage() {
 
       {/* ===== MISSION & VISION ===== */}
       <section className="relative py-28 md:py-36">
-        <div className="absolute inset-0 bg-coffee-950 angle-cut-both" />
+        <div className="absolute inset-0 bg-[var(--hero-bg)] angle-cut-both" />
         <div className="absolute inset-0 ethiopian-pattern opacity-20" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto site-gutter">
           <div className="grid md:grid-cols-2 gap-12">
             <Reveal>
-              <div className="p-8 md:p-10 border border-gold-500/20 bg-coffee-900/50 backdrop-blur-sm">
-                <div className="w-11 h-11 flex items-center justify-center bg-gold-500/10 mb-5">
-                  <Target className="w-5 h-5 text-gold-400" />
+              <div className="p-8 md:p-10 border border-brand-500/20 bg-slate-950/50 backdrop-blur-sm">
+                <div className="w-11 h-11 flex items-center justify-center bg-brand-500/15 mb-5">
+                  <Target className="w-5 h-5 text-brand-300" />
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-white mb-3">
                   Our Mission
                 </h3>
-                <p className="font-body text-base text-coffee-300 leading-relaxed">
+                <p className="font-body text-base text-white/75 leading-relaxed">
                   To be Ethiopia&apos;s most trusted agricultural export partner
                   by delivering premium-quality products with uncompromising
                   standards, fostering sustainable farming practices, and
@@ -200,14 +200,14 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={0.15}>
-              <div className="p-8 md:p-10 border border-gold-500/20 bg-coffee-900/50 backdrop-blur-sm">
-                <div className="w-11 h-11 flex items-center justify-center bg-gold-500/10 mb-5">
-                  <Eye className="w-5 h-5 text-gold-400" />
+              <div className="p-8 md:p-10 border border-brand-500/20 bg-slate-950/50 backdrop-blur-sm">
+                <div className="w-11 h-11 flex items-center justify-center bg-brand-500/15 mb-5">
+                  <Eye className="w-5 h-5 text-brand-300" />
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-white mb-3">
                   Our Vision
                 </h3>
-                <p className="font-body text-base text-coffee-300 leading-relaxed">
+                <p className="font-body text-base text-white/75 leading-relaxed">
                   To position Ethiopian agricultural products as the gold
                   standard in global trade. We envision a future where every
                   buyer worldwide recognizes Ethiopia not just as the birthplace
@@ -222,7 +222,7 @@ export default function AboutPage() {
 
       {/* ===== VALUES ===== */}
       <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto site-gutter">
           <SectionHeading
             label="Our Values"
             title="What Drives Us Forward"
@@ -236,14 +236,14 @@ export default function AboutPage() {
                   className={cn(
                     "group relative p-6 lg:p-7 border border-[var(--border)] bg-[var(--card)]",
                     "transition-all duration-500",
-                    "hover:border-[var(--accent)] hover:shadow-xl hover:-translate-y-1"
+                    "hover:border-[var(--primary)] hover:shadow-xl hover:-translate-y-1"
                   )}
                 >
                   <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
-                    <div className="absolute top-0 right-0 w-[90px] h-[2px] bg-[var(--accent)] origin-top-right rotate-[-45deg] translate-x-[15px] translate-y-[22px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    <div className="absolute top-0 right-0 w-[90px] h-[2px] bg-[var(--primary)] origin-top-right rotate-[-45deg] translate-x-[15px] translate-y-[22px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   </div>
 
-                  <value.icon className="w-7 h-7 text-[var(--accent)] mb-4" strokeWidth={1.5} />
+                  <value.icon className="w-7 h-7 text-[var(--primary)] mb-4" strokeWidth={1.5} />
                   <h3 className="font-heading text-lg font-bold mb-2 text-[var(--foreground)]">
                     {value.title}
                   </h3>
@@ -259,14 +259,13 @@ export default function AboutPage() {
 
       {/* ===== TIMELINE ===== */}
       <section className="py-20 md:py-28 bg-[var(--secondary)] ethiopian-pattern">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto site-gutter">
           <SectionHeading
             label="Our Journey"
             title="Milestones That Define Us"
           />
 
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-[var(--border)] -translate-x-1/2" />
 
             <div className="space-y-12">
@@ -279,17 +278,15 @@ export default function AboutPage() {
                       i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                     )}
                   >
-                    {/* Dot */}
-                    <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-[var(--accent)] rotate-45 -translate-x-1/2 z-10 mt-2" />
+                    <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-[var(--primary)] rotate-45 -translate-x-1/2 z-10 mt-2" />
 
-                    {/* Content */}
                     <div
                       className={cn(
                         "ml-16 md:ml-0 md:w-[calc(50%-3rem)]",
                         i % 2 === 0 ? "md:text-right" : "md:text-left"
                       )}
                     >
-                      <span className="font-body text-xs uppercase tracking-[0.2em] text-[var(--accent)] font-semibold">
+                      <span className="font-body text-xs uppercase tracking-[0.2em] text-[var(--primary)] font-semibold">
                         {item.year}
                       </span>
                       <h3 className="font-heading text-2xl font-bold text-[var(--foreground)] mt-1 mb-2">
@@ -309,11 +306,11 @@ export default function AboutPage() {
 
       {/* ===== CTA ===== */}
       <section className="py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto site-gutter text-center">
           <Reveal>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--foreground)] leading-[1.15]">
               Partner with Ethiopia&apos;s{" "}
-              <span className="text-[var(--accent)]">Trusted Exporters</span>
+              <span className="text-[var(--primary)]">Trusted Exporters</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
