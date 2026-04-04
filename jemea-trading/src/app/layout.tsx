@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="light" suppressHydrationWarning>
       <body className="min-h-screen font-body antialiased">
         <Providers>
           <div className="grain-overlay" aria-hidden="true" />
