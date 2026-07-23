@@ -23,37 +23,37 @@ const products = [
     title: "Ethiopian Coffee Beans",
     description:
       "Premium Arabica coffee beans sourced from the birthplace of coffee. Sun-dried and washed varieties from Sidamo, Yirgacheffe, and Harar regions.",
-    image: "/images/coffee_beans.png",
+    image: "/images/coffee_beans_hd.png",
   },
   {
     title: "Sesame Seeds",
     description:
       "High-quality Humera and Wollega sesame seeds, prized globally for their rich oil content and distinctive nutty flavor profile.",
-    image: "/images/sesame_seeds.png",
+    image: "/images/sesame_seeds_hd.png",
   },
   {
     title: "Niger Seeds",
     description:
       "Ethiopian niger seeds (noug) with exceptional oil yield, cultivated in the highlands for purity and nutritional richness.",
-    image: "/images/niger_seeds.png",
+    image: "/images/niger_seeds_hd.png",
   },
   {
     title: "Green Mung Beans",
     description:
       "Organic green mung beans with high protein content, carefully sorted and graded to meet international export standards.",
-    image: "/images/green_mung_beans.png",
+    image: "/images/green_mung_beans_hd.png",
   },
   {
     title: "Soya Beans",
     description:
       "Non-GMO soya beans from Ethiopia's fertile soils, processed and packaged for international markets with strict quality control.",
-    image: "/images/soya_beans.png",
+    image: "/images/soya_beans_hd.png",
   },
   {
     title: "Peanuts",
     description:
       "Bold kernel peanuts with superior taste and crunch. Sourced from select Ethiopian farms and graded to international standards.",
-    image: "/images/peanut_beans.png",
+    image: "/images/peanut_beans_hd.png",
   },
 ];
 
@@ -237,7 +237,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-72 h-72 relative">
                       <Image
-                        src="/images/coffee_beans.png"
+                        src="/images/coffee_beans_hd.png"
                         alt="Ethiopian Coffee"
                         fill
                         className="object-contain drop-shadow-2xl"
@@ -253,7 +253,7 @@ export default function HomePage() {
                   className="absolute -top-4 -right-4 w-24 h-24"
                 >
                   <Image
-                    src="/images/sesame_seeds.png"
+                    src="/images/sesame_seeds_hd.png"
                     alt="Sesame Seeds"
                     fill
                     className="object-contain opacity-80"
@@ -270,7 +270,7 @@ export default function HomePage() {
                   className="absolute -bottom-6 -left-6 w-28 h-28"
                 >
                   <Image
-                    src="/images/peanut_beans.png"
+                    src="/images/peanut_beans_hd.png"
                     alt="Peanuts"
                     fill
                     className="object-contain opacity-80"

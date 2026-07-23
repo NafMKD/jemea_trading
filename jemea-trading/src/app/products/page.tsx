@@ -34,7 +34,7 @@ const products: Product[] = [
       "Grade: Premium Export Quality",
       "Certifications: Phytosanitary compliant",
     ],
-    image: "/images/coffee_beans.png",
+    image: "/images/coffee_beans_hd.png",
   },
   {
     id: "sesame",
@@ -49,7 +49,7 @@ const products: Product[] = [
       "Grade: Export Premium",
       "Packaging: 25kg/50kg bags",
     ],
-    image: "/images/sesame_seeds.png",
+    image: "/images/sesame_seeds_hd.png",
   },
   {
     id: "niger",
@@ -64,7 +64,7 @@ const products: Product[] = [
       "Grade: Export Quality",
       "Use: Cooking oil, Bird feed",
     ],
-    image: "/images/niger_seeds.png",
+    image: "/images/niger_seeds_hd.png",
   },
   {
     id: "mung",
@@ -79,7 +79,7 @@ const products: Product[] = [
       "Certification: Organic available",
       "Markets: Asia, Middle East",
     ],
-    image: "/images/green_mung_beans.png",
+    image: "/images/green_mung_beans_hd.png",
   },
   {
     id: "soya",
@@ -94,7 +94,7 @@ const products: Product[] = [
       "Moisture: <13%",
       "Packaging: Customizable",
     ],
-    image: "/images/soya_beans.png",
+    image: "/images/soya_beans_hd.png",
   },
   {
     id: "peanuts",
@@ -109,7 +109,7 @@ const products: Product[] = [
       "Moisture: <8%",
       "Use: Snacking, Confectionery, Oil",
     ],
-    image: "/images/peanut_beans.png",
+    image: "/images/peanut_beans_hd.png",
   },
   {
     id: "castor",
@@ -124,7 +124,22 @@ const products: Product[] = [
       "Applications: Pharma, Cosmetics",
       "Packaging: 50kg bags",
     ],
-    image: "/images/castor_seeds.png",
+    image: "/images/castor_seeds_hd.png",
+  },
+  {
+    id: "pigeon-pea",
+    title: "Pigeon Pea",
+    category: "export",
+    shortDesc: "Protein-rich red gram pulses for global tables.",
+    fullDesc:
+      "Ethiopian pigeon peas (Cajanus cajan), also known as red gram or toor dal, are sun-grown in warm lowland regions and prized for their rich, nutty flavor and high protein content. A staple pulse across Asia, Africa, and the Caribbean, our pigeon peas are cleaned, sorted, and graded to meet strict international standards — available as whole seeds or split for dal.",
+    specs: [
+      "Botanical Name: Cajanus cajan",
+      "Protein Content: 20-22%",
+      "Form: Whole seeds & split (dal)",
+      "Markets: India, Africa, Caribbean",
+    ],
+    image: "/images/pigeon_pea.png",
   },
   {
     id: "polymer",
