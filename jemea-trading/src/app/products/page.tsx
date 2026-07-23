@@ -169,7 +169,7 @@ const products: Product[] = [
       "Condition: Brand New",
       "Service: End-to-end import",
     ],
-    image: "/images/byd_land_cruiser_sino_truck_cars.png",
+    image: "/images/vehicle_imports_hd.png",
   },
 ];
 

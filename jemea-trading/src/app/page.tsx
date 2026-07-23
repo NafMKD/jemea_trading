@@ -487,7 +487,7 @@ export default function HomePage() {
               {
                 title: "Vehicle Imports",
                 desc: "BYD, Toyota Land Cruisers, and Sino trucks sourced for the Ethiopian market.",
-                image: "/images/byd_land_cruiser_sino_truck_cars.png",
+                image: "/images/vehicle_imports_hd.png",
               },
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 0.1}>
