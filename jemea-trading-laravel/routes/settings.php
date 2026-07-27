@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Settings\EmailNotificationController;
 use App\Http\Controllers\Settings\ProfileController;
 use App\Http\Controllers\Settings\SecurityController;
 use Illuminate\Auth\Middleware\RequirePassword;
@@ -24,6 +25,18 @@ Route::middleware(['auth', 'active', 'verified'])->group(function () {
         ->name('user-password.update');
 
     Route::inertia('settings/appearance', 'settings/appearance')->name('appearance.edit');
+});
+
+Route::middleware(['auth', 'active', 'verified', 'can:access-admin'])->group(function () {
+    Route::get('settings/email-notifications', [EmailNotificationController::class, 'edit'])
+        ->middleware(RequirePassword::class)
+        ->name('email-notifications.edit');
+    Route::patch('settings/email-notifications', [EmailNotificationController::class, 'update'])
+        ->middleware(RequirePassword::class)
+        ->name('email-notifications.update');
+    Route::post('settings/email-notifications/test', [EmailNotificationController::class, 'test'])
+        ->middleware([RequirePassword::class, 'throttle:3,1'])
+        ->name('email-notifications.test');
 });
 
 Route::get('.well-known/passkey-endpoints', function () {

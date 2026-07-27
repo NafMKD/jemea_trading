@@ -3,6 +3,7 @@
 return [
 
     'contact_to' => env('CONTACT_EMAIL', 'Jemeaplc@gmail.com'),
+    'notifications_enabled' => env('MAIL_NOTIFICATIONS_ENABLED', true),
 
     /*
     |--------------------------------------------------------------------------

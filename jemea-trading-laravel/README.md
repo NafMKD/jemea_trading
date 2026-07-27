@@ -49,6 +49,20 @@ Authenticated administrators can:
 
 Guests, inactive users, and staff without administrator authorization cannot access or mutate inquiry records.
 
+## Email notification settings
+
+Administrators can configure inquiry notification delivery at `/settings/email-notifications`.
+
+The page provides:
+
+- An inquiry notification on/off switch.
+- SMTP host, port, username, password, and encryption settings.
+- Sender name and sender address.
+- The administrator destination address that receives inquiry alerts.
+- A test-email action after the settings have been saved.
+
+The settings page requires recent password confirmation. SMTP passwords are encrypted with the application key before storage and are never returned to the browser. When notifications are disabled, contact inquiries continue to be stored but no email job is queued.
+
 ## Contact inquiries
 
 Contact submissions are validated, rate-limited, protected by a honeypot, and stored in `contact_inquiries` before the notification email is queued. Configure the notification recipient and SMTP connection in `.env`:
@@ -77,6 +91,8 @@ On shared hosting, configure cron to call Laravel's scheduler every minute. The 
 ```
 
 If mail delivery fails, the inquiry remains in the database and the queued job can be retried.
+
+Product quote links use `/contact?product={product-id}`. The Contact form validates the supplied product identifier and preselects the matching Product Interest option.
 
 ## Quality checks
 

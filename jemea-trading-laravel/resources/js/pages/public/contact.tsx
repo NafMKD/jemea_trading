@@ -69,14 +69,18 @@ const contactInfo = [
     },
 ];
 
-export default function ContactPage() {
+export default function ContactPage({
+    productInterest = null,
+}: {
+    productInterest?: string | null;
+}) {
     const [sent, setSent] = useState(false);
     const { data, setData, post, processing, errors, reset, clearErrors } =
         useForm<ContactForm>({
             name: '',
             email: '',
             company: '',
-            product_interest: '',
+            product_interest: productInterest ?? '',
             message: '',
             website: '',
         });
@@ -357,6 +361,9 @@ export default function ContactPage() {
                                                     </option>
                                                     <option value="castor">
                                                         Castor Seeds
+                                                    </option>
+                                                    <option value="pigeon-pea">
+                                                        Pigeon Pea
                                                     </option>
                                                     <option value="polymer">
                                                         Polymer Materials

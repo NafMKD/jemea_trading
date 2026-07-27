@@ -30,4 +30,22 @@ class PublicPagesTest extends TestCase
             'contact' => ['/contact', 'public/contact'],
         ];
     }
+
+    public function test_contact_page_accepts_a_known_product_interest(): void
+    {
+        $this->get('/contact?product=pigeon-pea')
+            ->assertOk()
+            ->assertInertia(fn (Assert $page) => $page
+                ->component('public/contact')
+                ->where('productInterest', 'pigeon-pea'));
+    }
+
+    public function test_contact_page_ignores_an_unknown_product_interest(): void
+    {
+        $this->get('/contact?product=unknown-product')
+            ->assertOk()
+            ->assertInertia(fn (Assert $page) => $page
+                ->component('public/contact')
+                ->where('productInterest', null));
+    }
 }

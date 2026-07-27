@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::inertia('/', 'public/home')->name('home');
 Route::inertia('/about', 'public/about')->name('about');
 Route::inertia('/products', 'public/products')->name('products.index');
-Route::inertia('/contact', 'public/contact')->name('contact.create');
+Route::get('/contact', [ContactInquiryController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactInquiryController::class, 'store'])
     ->middleware('throttle:contact-submissions')
     ->name('contact.store');

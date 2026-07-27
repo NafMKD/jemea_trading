@@ -415,7 +415,9 @@ export default function ProductsPage() {
                                         variant="accent"
                                         className="group w-full"
                                     >
-                                        <Link href="/contact">
+                                        <Link
+                                            href={`/contact?product=${selectedProduct.id}`}
+                                        >
                                             Request a Quote
                                             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                                         </Link>

@@ -110,6 +110,9 @@ class ContactInquiryTest extends TestCase
     {
         $inquiry = ContactInquiry::factory()->create();
 
+        Mail::shouldReceive('mailer')
+            ->once()
+            ->andReturnSelf();
         Mail::shouldReceive('to')
             ->once()
             ->andThrow(new RuntimeException('SMTP unavailable'));

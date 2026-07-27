@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Mail\ContactInquiryReceived;
 use App\Models\ContactInquiry;
+use App\Services\EmailNotificationSettings;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Log;
@@ -18,10 +19,19 @@ class SendContactInquiryNotification implements ShouldQueue
 
     public function __construct(public ContactInquiry $inquiry) {}
 
-    public function handle(): void
+    public function handle(?EmailNotificationSettings $settings = null): void
     {
         try {
-            Mail::to(config('mail.contact_to'))
+            $settings ??= app(EmailNotificationSettings::class);
+
+            if (! $settings->notificationsEnabled()) {
+                return;
+            }
+
+            $mail = $settings->applyMailerConfiguration();
+
+            Mail::mailer($mail['mailer'])
+                ->to($mail['destination'])
                 ->send(new ContactInquiryReceived($this->inquiry));
 
             $this->inquiry->forceFill(['email_sent_at' => now()])->save();
