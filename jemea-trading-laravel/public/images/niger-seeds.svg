@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" aria-hidden="true">
+  <defs>
+    <radialGradient id="niger" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" style="stop-color:#2c1810"/>
+      <stop offset="70%" style="stop-color:#2c1810"/>
+      <stop offset="100%" style="stop-color:#15803d;stop-opacity:0.25"/>
+    </radialGradient>
+  </defs>
+  <!-- Soft cluster glow -->
+  <ellipse cx="200" cy="210" rx="95" ry="88" fill="url(#niger)" opacity="0.35"/>
+  <!-- Seeds -->
+  <ellipse cx="175" cy="195" rx="11" ry="16" fill="#2c1810" transform="rotate(-15 175 195)"/>
+  <ellipse cx="200" cy="185" rx="10" ry="15" fill="#2c1810" transform="rotate(8 200 185)"/>
+  <ellipse cx="225" cy="198" rx="11" ry="16" fill="#2c1810" transform="rotate(22 225 198)"/>
+  <ellipse cx="195" cy="215" rx="10" ry="15" fill="#2c1810" transform="rotate(-35 195 215)"/>
+  <ellipse cx="218" cy="228" rx="10" ry="14" fill="#2c1810" transform="rotate(5 218 228)"/>
+  <ellipse cx="165" cy="220" rx="9" ry="14" fill="#2c1810" transform="rotate(40 165 220)"/>
+  <ellipse cx="185" cy="235" rx="10" ry="15" fill="#2c1810" transform="rotate(-8 185 235)"/>
+  <ellipse cx="210" cy="245" rx="9" ry="13" fill="#2c1810" transform="rotate(28 210 245)"/>
+  <ellipse cx="235" cy="225" rx="9" ry="14" fill="#2c1810" transform="rotate(-42 235 225)"/>
+  <ellipse cx="155" cy="205" rx="8" ry="12" fill="#2c1810" transform="rotate(55 155 205)" opacity="0.85"/>
+  <ellipse cx="240" cy="205" rx="8" ry="12" fill="#2c1810" transform="rotate(-18 240 205)"/>
+  <!-- Highlights -->
+  <ellipse cx="192" cy="188" rx="2.5" ry="3.5" fill="#e0c9ac" opacity="0.25"/>
+  <ellipse cx="222" cy="200" rx="2" ry="3" fill="#e0c9ac" opacity="0.2"/>
+  <ellipse cx="178" cy="228" rx="2" ry="2.5" fill="#e0c9ac" opacity="0.22"/>
+</svg>

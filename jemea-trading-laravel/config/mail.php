@@ -2,6 +2,8 @@
 
 return [
 
+    'contact_to' => env('CONTACT_EMAIL', 'Jemeaplc@gmail.com'),
+
     /*
     |--------------------------------------------------------------------------
     | Default Mailer

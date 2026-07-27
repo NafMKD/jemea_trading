@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" aria-hidden="true">
+  <defs>
+    <radialGradient id="soy" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#e0c9ac"/>
+      <stop offset="55%" style="stop-color:#b8860b"/>
+      <stop offset="100%" style="stop-color:#C67B5C"/>
+    </radialGradient>
+  </defs>
+  <circle cx="155" cy="175" r="28" fill="url(#soy)"/>
+  <circle cx="210" cy="155" r="26" fill="url(#soy)" opacity="0.95"/>
+  <circle cx="255" cy="185" r="27" fill="url(#soy)"/>
+  <circle cx="180" cy="220" r="25" fill="url(#soy)" opacity="0.92"/>
+  <circle cx="235" cy="215" r="26" fill="url(#soy)"/>
+  <circle cx="290" cy="200" r="24" fill="url(#soy)" opacity="0.88"/>
+  <circle cx="130" cy="225" r="23" fill="url(#soy)"/>
+  <circle cx="200" cy="265" r="27" fill="url(#soy)"/>
+  <circle cx="265" cy="255" r="25" fill="url(#soy)"/>
+  <circle cx="320" cy="235" r="22" fill="url(#soy)" opacity="0.85"/>
+  <!-- Subtle hilum -->
+  <ellipse cx="148" cy="168" rx="4" ry="5" fill="#C67B5C" opacity="0.35"/>
+  <ellipse cx="218" cy="208" rx="3.5" ry="4.5" fill="#2c1810" opacity="0.2"/>
+  <ellipse cx="248" cy="178" rx="4" ry="5" fill="#C67B5C" opacity="0.3"/>
+</svg>
