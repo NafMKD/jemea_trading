@@ -174,6 +174,9 @@ export default function AboutPage() {
                                     <img
                                         src="/images/top_view_of_addis_ababa.png"
                                         alt="Addis Ababa, Ethiopia"
+                                        width={900}
+                                        height={700}
+                                        loading="lazy"
                                         className="object-cover"
                                     />
                                 </div>
@@ -259,7 +262,7 @@ export default function AboutPage() {
                                 <div
                                     className={cn(
                                         'group relative border border-[var(--border)] bg-[var(--card)] p-6 lg:p-7',
-                                        'transition-all duration-500',
+                                        'transition-[border-color,transform,box-shadow] duration-500',
                                         'hover:-translate-y-1 hover:border-[var(--primary)] hover:shadow-xl',
                                     )}
                                 >
@@ -355,16 +358,17 @@ export default function AboutPage() {
                     </Reveal>
                     <Reveal delay={0.2}>
                         <div className="mt-10">
-                            <Link href="/contact">
-                                <Button
-                                    variant="accent"
-                                    size="lg"
-                                    className="group"
-                                >
+                            <Button
+                                asChild
+                                variant="accent"
+                                size="lg"
+                                className="group"
+                            >
+                                <Link href="/contact">
                                     Get In Touch
                                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                </Button>
-                            </Link>
+                                </Link>
+                            </Button>
                         </div>
                     </Reveal>
                 </div>

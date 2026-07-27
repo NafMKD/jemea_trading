@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ContactInquiryController as AdminContactInquiryController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ContactInquiryController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,7 +14,15 @@ Route::post('/contact', [ContactInquiryController::class, 'store'])
     ->name('contact.store');
 
 Route::middleware(['auth', 'active', 'verified', 'can:access-admin'])->group(function () {
-    Route::inertia('admin', 'admin/dashboard')->name('dashboard');
+    Route::get('admin', DashboardController::class)->name('dashboard');
+    Route::get('admin/inquiries', [AdminContactInquiryController::class, 'index'])
+        ->name('admin.inquiries.index');
+    Route::get('admin/inquiries/{inquiry}', [AdminContactInquiryController::class, 'show'])
+        ->name('admin.inquiries.show');
+    Route::patch('admin/inquiries/{inquiry}', [AdminContactInquiryController::class, 'update'])
+        ->name('admin.inquiries.update');
+    Route::delete('admin/inquiries/{inquiry}', [AdminContactInquiryController::class, 'destroy'])
+        ->name('admin.inquiries.destroy');
 });
 
 require __DIR__.'/settings.php';

@@ -29,13 +29,13 @@ export function ProductCard({
             <div
                 className={cn(
                     'relative overflow-hidden border border-[var(--border)] bg-[var(--card)]',
-                    'transition-all duration-500',
+                    'transition-[border-color,transform,box-shadow] duration-500',
                     'hover:-translate-y-2 hover:shadow-2xl',
                     'hover:border-[var(--primary)]',
                 )}
             >
                 <div className="absolute top-0 right-0 z-10 h-16 w-16 overflow-hidden">
-                    <div className="absolute top-0 right-0 h-[2px] w-[90px] origin-top-right translate-x-[15px] translate-y-[22px] rotate-[-45deg] bg-[var(--primary)] transition-all duration-500 group-hover:w-[120px]" />
+                    <div className="absolute top-0 right-0 h-[2px] w-[90px] origin-top-right translate-x-[15px] translate-y-[22px] rotate-[-45deg] bg-[var(--primary)] transition-[width] duration-500 group-hover:w-[120px]" />
                 </div>
 
                 <div className="relative h-52 overflow-hidden bg-[var(--secondary)]">
@@ -45,6 +45,7 @@ export function ProductCard({
                             alt={title}
                             width={240}
                             height={180}
+                            loading="lazy"
                             className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-110"
                         />
                     </div>
@@ -59,7 +60,7 @@ export function ProductCard({
                     </p>
 
                     <div className="mt-2 flex items-center gap-2">
-                        <div className="h-[2px] w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-12" />
+                        <div className="h-[2px] w-0 bg-[var(--primary)] transition-[width] duration-500 group-hover:w-12" />
                         <span className="font-body text-xs tracking-wider text-[var(--primary)] uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                             Learn More
                         </span>

@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\ContactInquiry;
 use App\Models\User;
+use App\Policies\ContactInquiryPolicy;
 use Carbon\CarbonImmutable;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
@@ -43,6 +45,7 @@ class AppServiceProvider extends ServiceProvider
         );
 
         Gate::define('access-admin', fn (User $user): bool => $user->canAccessAdmin());
+        Gate::policy(ContactInquiry::class, ContactInquiryPolicy::class);
 
         RateLimiter::for(
             'contact-submissions',

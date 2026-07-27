@@ -92,6 +92,13 @@ export default function ContactPage() {
                 reset();
                 setSent(true);
             },
+            onError: () => {
+                requestAnimationFrame(() => {
+                    document
+                        .querySelector<HTMLElement>('[aria-invalid="true"]')
+                        ?.focus();
+                });
+            },
         });
     }
 
@@ -252,6 +259,7 @@ export default function ContactPage() {
                                                     }
                                                     placeholder="your@email.com"
                                                     autoComplete="email"
+                                                    spellCheck={false}
                                                     aria-invalid={Boolean(
                                                         errors.email,
                                                     )}
@@ -323,7 +331,8 @@ export default function ContactPage() {
                                                             e.target.value,
                                                         )
                                                     }
-                                                    className="flex h-12 w-full cursor-pointer border-2 border-[var(--border)] bg-transparent px-4 py-2 font-body text-base text-[var(--foreground)] transition-colors focus-visible:border-[var(--primary)] focus-visible:ring-1 focus-visible:ring-[var(--primary)] focus-visible:outline-none"
+                                                    autoComplete="off"
+                                                    className="flex h-12 w-full cursor-pointer border-2 border-[var(--border)] bg-[var(--background)] px-4 py-2 font-body text-base text-[var(--foreground)] transition-colors focus-visible:border-[var(--primary)] focus-visible:ring-1 focus-visible:ring-[var(--primary)] focus-visible:outline-none"
                                                 >
                                                     <option value="">
                                                         Select a product
@@ -388,7 +397,8 @@ export default function ContactPage() {
                                                         e.target.value,
                                                     )
                                                 }
-                                                placeholder="Tell us about your requirements, quantities, and delivery preferences..."
+                                                placeholder="Tell us about quantities, packaging, and delivery…"
+                                                autoComplete="off"
                                                 aria-invalid={Boolean(
                                                     errors.message,
                                                 )}
@@ -410,8 +420,13 @@ export default function ContactPage() {
                                                 initial={{ opacity: 0, y: -10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 className="flex items-center gap-3 border border-brand-200 bg-brand-50 p-4"
+                                                role="status"
+                                                aria-live="polite"
                                             >
-                                                <CheckCircle className="h-5 w-5 shrink-0 text-brand-500" />
+                                                <CheckCircle
+                                                    className="h-5 w-5 shrink-0 text-brand-500"
+                                                    aria-hidden="true"
+                                                />
                                                 <p className="font-body text-sm text-brand-700">
                                                     Message sent successfully!
                                                     We&apos;ll get back to you
@@ -425,8 +440,12 @@ export default function ContactPage() {
                                                 initial={{ opacity: 0, y: -10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 className="flex items-center gap-3 border border-red-200 bg-red-50 p-4 dark:border-red-700 dark:bg-red-900/30"
+                                                role="alert"
                                             >
-                                                <AlertCircle className="h-5 w-5 shrink-0 text-red-500" />
+                                                <AlertCircle
+                                                    className="h-5 w-5 shrink-0 text-red-500"
+                                                    aria-hidden="true"
+                                                />
                                                 <p className="font-body text-sm text-red-700 dark:text-red-300">
                                                     Please review the
                                                     highlighted fields and try
@@ -444,12 +463,18 @@ export default function ContactPage() {
                                         >
                                             {processing ? (
                                                 <>
-                                                    <Loader2 className="h-4 w-4 animate-spin" />
-                                                    Sending...
+                                                    <Loader2
+                                                        className="h-4 w-4 animate-spin"
+                                                        aria-hidden="true"
+                                                    />
+                                                    Sending…
                                                 </>
                                             ) : (
                                                 <>
-                                                    <Send className="h-4 w-4" />
+                                                    <Send
+                                                        className="h-4 w-4"
+                                                        aria-hidden="true"
+                                                    />
                                                     Send Message
                                                 </>
                                             )}
@@ -467,7 +492,7 @@ export default function ContactPage() {
                                         delay={i * 0.1}
                                         direction="right"
                                     >
-                                        <div className="group border border-[var(--border)] bg-[var(--card)] p-6 transition-all duration-300 hover:border-[var(--primary)]">
+                                        <div className="group border border-[var(--border)] bg-[var(--card)] p-6 transition-[border-color] duration-300 hover:border-[var(--primary)]">
                                             <div className="flex items-start gap-4">
                                                 <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[var(--primary)]/10">
                                                     <item.icon className="h-5 w-5 text-[var(--primary)]" />
@@ -537,7 +562,7 @@ export default function ContactPage() {
                             },
                         ].map((faq, i) => (
                             <Reveal key={faq.q} delay={i * 0.08}>
-                                <details className="group border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:border-[var(--primary)]">
+                                <details className="group border border-[var(--border)] bg-[var(--card)] transition-[border-color] duration-300 hover:border-[var(--primary)]">
                                     <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-heading text-base font-bold text-[var(--foreground)]">
                                         {faq.q}
                                         <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center bg-[var(--primary)]/10 transition-transform duration-300 group-open:rotate-45">

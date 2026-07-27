@@ -13,14 +13,14 @@ export function ThemeToggle() {
             className={cn(
                 'relative flex h-10 w-10 items-center justify-center',
                 'border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--primary)]',
-                'cursor-pointer transition-all duration-200',
+                'cursor-pointer transition-[color,background-color,border-color] duration-200',
                 'group hover:shadow-md',
             )}
             aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
         >
             <Sun
                 className={cn(
-                    'h-[18px] w-[18px] transition-all duration-300',
+                    'h-[18px] w-[18px] transition-[color,opacity,transform] duration-300',
                     isDark
                         ? 'scale-100 rotate-0 opacity-100'
                         : 'scale-0 -rotate-90 opacity-0',
@@ -28,7 +28,7 @@ export function ThemeToggle() {
             />
             <Moon
                 className={cn(
-                    'absolute h-[18px] w-[18px] transition-all duration-300',
+                    'absolute h-[18px] w-[18px] transition-[color,opacity,transform] duration-300',
                     isDark
                         ? 'scale-0 rotate-90 opacity-0'
                         : 'scale-100 rotate-0 opacity-100',

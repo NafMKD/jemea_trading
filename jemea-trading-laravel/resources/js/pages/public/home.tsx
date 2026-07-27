@@ -184,25 +184,25 @@ export default function HomePage() {
                                 transition={{ duration: 0.6, delay: 0.65 }}
                                 className="mt-10 flex flex-wrap gap-4"
                             >
-                                <Link href="/products">
-                                    <Button
-                                        variant="accent"
-                                        size="lg"
-                                        className="group"
-                                    >
+                                <Button
+                                    asChild
+                                    variant="accent"
+                                    size="lg"
+                                    className="group"
+                                >
+                                    <Link href="/products">
                                         Explore Products
                                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                    </Button>
-                                </Link>
-                                <Link href="/about">
-                                    <Button
-                                        variant="outline"
-                                        size="lg"
-                                        className="border-white/40 text-white hover:border-white/60 hover:bg-white/10 hover:text-white"
-                                    >
-                                        Our Story
-                                    </Button>
-                                </Link>
+                                    </Link>
+                                </Button>
+                                <Button
+                                    asChild
+                                    variant="outline"
+                                    size="lg"
+                                    className="border-white/40 text-white hover:border-white/60 hover:bg-white/10 hover:text-white"
+                                >
+                                    <Link href="/about">Our Story</Link>
+                                </Button>
                             </motion.div>
 
                             <motion.div
@@ -245,6 +245,9 @@ export default function HomePage() {
                                             <img
                                                 src="/images/coffee_beans_hd.png"
                                                 alt="Ethiopian Coffee"
+                                                width={640}
+                                                height={480}
+                                                fetchPriority="high"
                                                 className="object-contain drop-shadow-2xl"
                                             />
                                         </div>
@@ -263,6 +266,8 @@ export default function HomePage() {
                                     <img
                                         src="/images/sesame_seeds_hd.png"
                                         alt="Sesame Seeds"
+                                        width={180}
+                                        height={180}
                                         className="object-contain opacity-80"
                                     />
                                 </motion.div>
@@ -279,6 +284,8 @@ export default function HomePage() {
                                     <img
                                         src="/images/peanut_beans_hd.png"
                                         alt="Peanuts"
+                                        width={160}
+                                        height={160}
                                         className="object-contain opacity-80"
                                     />
                                 </motion.div>
@@ -328,12 +335,12 @@ export default function HomePage() {
                                 <div
                                     className={cn(
                                         'group relative border border-[var(--border)] bg-[var(--card)] p-6 lg:p-7',
-                                        'transition-all duration-500',
+                                        'transition-[border-color,transform,box-shadow] duration-500',
                                         'hover:-translate-y-1 hover:border-[var(--primary)] hover:shadow-xl',
                                     )}
                                 >
-                                    <div className="absolute top-0 left-0 h-[2px] w-10 bg-[var(--primary)] transition-all duration-500 group-hover:w-full" />
-                                    <div className="absolute top-0 left-0 h-10 w-[2px] bg-[var(--primary)] transition-all duration-500 group-hover:h-full" />
+                                    <div className="absolute top-0 left-0 h-[2px] w-10 bg-[var(--primary)] transition-[width] duration-500 group-hover:w-full" />
+                                    <div className="absolute top-0 left-0 h-10 w-[2px] bg-[var(--primary)] transition-[height] duration-500 group-hover:h-full" />
 
                                     <item.icon
                                         className="mb-4 h-7 w-7 text-[var(--primary)]"
@@ -379,16 +386,17 @@ export default function HomePage() {
 
                     <Reveal delay={0.3}>
                         <div className="mt-16 text-center">
-                            <Link href="/products">
-                                <Button
-                                    variant="accent"
-                                    size="lg"
-                                    className="group"
-                                >
+                            <Button
+                                asChild
+                                variant="accent"
+                                size="lg"
+                                className="group"
+                            >
+                                <Link href="/products">
                                     View All Products
                                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                </Button>
-                            </Link>
+                                </Link>
+                            </Button>
                         </div>
                     </Reveal>
                 </div>
@@ -404,6 +412,9 @@ export default function HomePage() {
                                     <img
                                         src="/images/bag_of_peanut_coffe_seeds.png"
                                         alt="Ethiopian Agricultural Products"
+                                        width={800}
+                                        height={600}
+                                        loading="lazy"
                                         className="object-cover"
                                     />
                                     <div
@@ -467,16 +478,17 @@ export default function HomePage() {
                             </Reveal>
 
                             <Reveal direction="right" delay={0.4}>
-                                <Link href="/about">
-                                    <Button
-                                        variant="default"
-                                        size="lg"
-                                        className="group"
-                                    >
+                                <Button
+                                    asChild
+                                    variant="default"
+                                    size="lg"
+                                    className="group"
+                                >
+                                    <Link href="/about">
                                         Read Our Story
                                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                    </Button>
-                                </Link>
+                                    </Link>
+                                </Button>
                             </Reveal>
                         </div>
                     </div>
@@ -511,11 +523,14 @@ export default function HomePage() {
                             },
                         ].map((item, i) => (
                             <Reveal key={item.title} delay={i * 0.1}>
-                                <div className="group relative overflow-hidden border border-[var(--border)] bg-[var(--card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+                                <div className="group relative overflow-hidden border border-[var(--border)] bg-[var(--card)] transition-[border-color,transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-xl">
                                     <div className="relative h-44 overflow-hidden bg-[var(--muted)]">
                                         <img
                                             src={item.image}
                                             alt={item.title}
+                                            width={360}
+                                            height={240}
+                                            loading="lazy"
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                     </div>
@@ -527,7 +542,7 @@ export default function HomePage() {
                                             {item.desc}
                                         </p>
                                     </div>
-                                    <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-full" />
+                                    <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[var(--primary)] transition-[width] duration-500 group-hover:w-full" />
                                 </div>
                             </Reveal>
                         ))}
@@ -572,25 +587,25 @@ export default function HomePage() {
 
                     <Reveal delay={0.3}>
                         <div className="mt-10 flex flex-wrap justify-center gap-4">
-                            <Link href="/contact">
-                                <Button
-                                    variant="accent"
-                                    size="lg"
-                                    className="group"
-                                >
+                            <Button
+                                asChild
+                                variant="accent"
+                                size="lg"
+                                className="group"
+                            >
+                                <Link href="/contact">
                                     Contact Us Today
                                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                </Button>
-                            </Link>
-                            <Link href="/products">
-                                <Button
-                                    variant="outline"
-                                    size="lg"
-                                    className="border-white/40 text-white hover:border-white/60 hover:bg-white/10 hover:text-white"
-                                >
-                                    Browse Products
-                                </Button>
-                            </Link>
+                                </Link>
+                            </Button>
+                            <Button
+                                asChild
+                                variant="outline"
+                                size="lg"
+                                className="border-white/40 text-white hover:border-white/60 hover:bg-white/10 hover:text-white"
+                            >
+                                <Link href="/products">Browse Products</Link>
+                            </Button>
                         </div>
                     </Reveal>
                 </div>

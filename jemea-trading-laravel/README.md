@@ -36,6 +36,19 @@ The password is requested through a hidden prompt and is not accepted as a comma
 
 Public registration is disabled. Only active users with the `admin` role can access `/admin`.
 
+## Inquiry administration
+
+Authenticated administrators can:
+
+- Review dashboard statistics and recent inquiries at `/admin`.
+- Search, filter, sort, and paginate inquiries at `/admin/inquiries`.
+- View complete contact and activity details.
+- Assign an inquiry to an active user.
+- Update its status to New, Read, Replied, or Archived.
+- Launch an email reply, archive the record, or permanently delete it after confirmation.
+
+Guests, inactive users, and staff without administrator authorization cannot access or mutate inquiry records.
+
 ## Contact inquiries
 
 Contact submissions are validated, rate-limited, protected by a honeypot, and stored in `contact_inquiries` before the notification email is queued. Configure the notification recipient and SMTP connection in `.env`:
@@ -83,5 +96,6 @@ The committed test configuration uses in-memory SQLite. Enable the PHP `pdo_sqli
 - Use MySQL or MariaDB.
 - Set `APP_DEBUG=false`.
 - Configure HTTPS, secure cookies, SMTP, and cron.
+- Set `SESSION_SECURE_COOKIE=true` after HTTPS is active.
 - Build Vite assets before deployment; Node.js is not required at runtime.
 - Never commit or upload a development `.env`.

@@ -10,8 +10,18 @@ export default function AppSidebarLayout({
 }: AppLayoutProps) {
     return (
         <AppShell variant="sidebar">
+            <a
+                href="#main-content"
+                className="fixed top-2 left-2 z-[100] -translate-y-16 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg transition-transform focus-visible:translate-y-0"
+            >
+                Skip to Main Content
+            </a>
             <AppSidebar />
-            <AppContent variant="sidebar" className="overflow-x-hidden">
+            <AppContent
+                id="main-content"
+                variant="sidebar"
+                className="overflow-x-hidden"
+            >
                 <AppSidebarHeader breadcrumbs={breadcrumbs} />
                 {children}
             </AppContent>

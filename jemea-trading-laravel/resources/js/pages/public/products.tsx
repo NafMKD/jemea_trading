@@ -1,9 +1,15 @@
 import { Head, Link } from '@inertiajs/react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Reveal } from '@/components/public/reveal';
 import { Button } from '@/components/public/ui/button';
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogTitle,
+} from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 
 interface Product {
@@ -242,7 +248,7 @@ export default function ProductsPage() {
                                         key={tab}
                                         onClick={() => setFilter(tab)}
                                         className={cn(
-                                            'cursor-pointer border px-6 py-2.5 font-body text-xs font-semibold tracking-[0.15em] uppercase transition-all duration-300',
+                                            'cursor-pointer border px-6 py-2.5 font-body text-xs font-semibold tracking-[0.15em] uppercase transition-[color,background-color,border-color] duration-300',
                                             filter === tab
                                                 ? 'border-[var(--primary)] bg-[var(--primary)] text-[var(--primary-foreground)]'
                                                 : 'border-[var(--border)] bg-transparent text-[var(--muted-foreground)] hover:border-[var(--primary)] hover:text-[var(--primary)]',
@@ -274,15 +280,18 @@ export default function ProductsPage() {
                                         delay: i * 0.05,
                                     }}
                                 >
-                                    <div
+                                    <button
+                                        type="button"
                                         onClick={() =>
                                             setSelectedProduct(product)
                                         }
+                                        aria-label={`View details for ${product.title}`}
                                         className={cn(
-                                            'group relative cursor-pointer',
+                                            'group relative w-full cursor-pointer text-left',
                                             'border border-[var(--border)] bg-[var(--card)]',
-                                            'transition-all duration-500',
+                                            'transition-[border-color,transform,box-shadow] duration-500',
                                             'hover:-translate-y-2 hover:border-[var(--primary)] hover:shadow-2xl',
+                                            'focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2 focus-visible:outline-none',
                                         )}
                                     >
                                         <div className="absolute top-4 left-4 z-10">
@@ -300,7 +309,7 @@ export default function ProductsPage() {
                                         </div>
 
                                         <div className="absolute top-0 right-0 z-10 h-16 w-16 overflow-hidden">
-                                            <div className="absolute top-0 right-0 h-[2px] w-[90px] origin-top-right translate-x-[15px] translate-y-[22px] rotate-[-45deg] bg-[var(--primary)] transition-all duration-500 group-hover:w-[120px]" />
+                                            <div className="absolute top-0 right-0 h-[2px] w-[90px] origin-top-right translate-x-[15px] translate-y-[22px] rotate-[-45deg] bg-[var(--primary)] transition-[width] duration-500 group-hover:w-[120px]" />
                                         </div>
 
                                         <div className="relative h-48 overflow-hidden bg-[var(--secondary)]">
@@ -310,6 +319,7 @@ export default function ProductsPage() {
                                                     alt={product.title}
                                                     width={220}
                                                     height={170}
+                                                    loading="lazy"
                                                     className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-110"
                                                 />
                                             </div>
@@ -323,13 +333,13 @@ export default function ProductsPage() {
                                                 {product.shortDesc}
                                             </p>
                                             <div className="mt-2 flex items-center gap-2">
-                                                <div className="h-[2px] w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-8" />
+                                                <div className="h-[2px] w-0 bg-[var(--primary)] transition-[width] duration-500 group-hover:w-8" />
                                                 <span className="font-body text-xs tracking-wider text-[var(--primary)] uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                                                     Details
                                                 </span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </button>
                                 </motion.div>
                             ))}
                         </AnimatePresence>
@@ -338,105 +348,84 @@ export default function ProductsPage() {
             </section>
 
             {/* ===== PRODUCT MODAL ===== */}
-            <AnimatePresence>
+            <Dialog
+                open={selectedProduct !== null}
+                onOpenChange={(open) => {
+                    if (!open) {
+                        setSelectedProduct(null);
+                    }
+                }}
+            >
                 {selectedProduct && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
-                        onClick={() => setSelectedProduct(null)}
-                    >
-                        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            transition={{
-                                type: 'spring',
-                                damping: 25,
-                                stiffness: 300,
-                            }}
-                            onClick={(e) => e.stopPropagation()}
-                            className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto border border-[var(--border)] bg-[var(--card)] shadow-2xl"
-                        >
-                            <button
-                                onClick={() => setSelectedProduct(null)}
-                                className="absolute top-4 right-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center bg-[var(--secondary)] transition-colors hover:bg-[var(--accent)] hover:text-white"
-                                aria-label="Close modal"
-                            >
-                                <X className="h-5 w-5" />
-                            </button>
-
-                            <div className="grid md:grid-cols-2">
-                                <div className="relative h-64 min-h-[280px] bg-[var(--secondary)] md:h-auto">
-                                    <img
-                                        src={selectedProduct.image}
-                                        alt={selectedProduct.title}
-                                        className="object-contain p-12"
-                                    />
-                                    <div className="absolute top-4 left-4">
-                                        <span
-                                            className={cn(
-                                                'px-3 py-1 font-body text-[10px] font-semibold tracking-wider uppercase',
-                                                selectedProduct.category ===
-                                                    'export'
-                                                    ? 'bg-brand-500 text-white'
-                                                    : 'bg-accent-500 text-white',
-                                            )}
-                                        >
-                                            {selectedProduct.category}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div className="flex flex-col gap-5 p-6 pr-14 md:p-8 md:pr-16">
-                                    <div>
-                                        <h2 className="mb-3 font-heading text-2xl font-bold text-[var(--foreground)]">
-                                            {selectedProduct.title}
-                                        </h2>
-                                        <p className="font-body text-sm leading-relaxed text-[var(--muted-foreground)]">
-                                            {selectedProduct.fullDesc}
-                                        </p>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="mb-3 font-body text-xs font-semibold tracking-[0.15em] text-[var(--primary)] uppercase">
-                                            Specifications
-                                        </h4>
-                                        <ul className="space-y-2">
-                                            {selectedProduct.specs.map(
-                                                (spec) => (
-                                                    <li
-                                                        key={spec}
-                                                        className="flex items-start gap-2 font-body text-sm text-[var(--muted-foreground)]"
-                                                    >
-                                                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-[var(--primary)]" />
-                                                        {spec}
-                                                    </li>
-                                                ),
-                                            )}
-                                        </ul>
-                                    </div>
-
-                                    <div className="mt-auto pt-2">
-                                        <Link href="/contact">
-                                            <Button
-                                                variant="accent"
-                                                className="group w-full"
-                                            >
-                                                Request a Quote
-                                                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                            </Button>
-                                        </Link>
-                                    </div>
+                    <DialogContent className="max-h-[90vh] gap-0 overflow-y-auto overscroll-contain border-[var(--border)] bg-[var(--card)] p-0 sm:max-w-3xl">
+                        <div className="grid md:grid-cols-2">
+                            <div className="relative h-64 min-h-[280px] bg-[var(--secondary)] md:h-auto">
+                                <img
+                                    src={selectedProduct.image}
+                                    alt={selectedProduct.title}
+                                    width={600}
+                                    height={450}
+                                    className="object-contain p-12"
+                                />
+                                <div className="absolute top-4 left-4">
+                                    <span
+                                        className={cn(
+                                            'px-3 py-1 font-body text-[10px] font-semibold tracking-wider uppercase',
+                                            selectedProduct.category ===
+                                                'export'
+                                                ? 'bg-brand-500 text-white'
+                                                : 'bg-accent-500 text-white',
+                                        )}
+                                    >
+                                        {selectedProduct.category}
+                                    </span>
                                 </div>
                             </div>
-                        </motion.div>
-                    </motion.div>
+
+                            <div className="flex flex-col gap-5 p-6 pr-14 md:p-8 md:pr-16">
+                                <div>
+                                    <DialogTitle className="mb-3 font-heading text-2xl font-bold text-[var(--foreground)]">
+                                        {selectedProduct.title}
+                                    </DialogTitle>
+                                    <DialogDescription className="font-body text-sm leading-relaxed text-[var(--muted-foreground)]">
+                                        {selectedProduct.fullDesc}
+                                    </DialogDescription>
+                                </div>
+
+                                <div>
+                                    <h4 className="mb-3 font-body text-xs font-semibold tracking-[0.15em] text-[var(--primary)] uppercase">
+                                        Specifications
+                                    </h4>
+                                    <ul className="space-y-2">
+                                        {selectedProduct.specs.map((spec) => (
+                                            <li
+                                                key={spec}
+                                                className="flex items-start gap-2 font-body text-sm text-[var(--muted-foreground)]"
+                                            >
+                                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-[var(--primary)]" />
+                                                {spec}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <div className="mt-auto pt-2">
+                                    <Button
+                                        asChild
+                                        variant="accent"
+                                        className="group w-full"
+                                    >
+                                        <Link href="/contact">
+                                            Request a Quote
+                                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                        </Link>
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    </DialogContent>
                 )}
-            </AnimatePresence>
+            </Dialog>
 
             {/* ===== CTA ===== */}
             <section className="relative overflow-hidden py-24">
@@ -461,16 +450,17 @@ export default function ProductsPage() {
                     </Reveal>
                     <Reveal delay={0.2}>
                         <div className="mt-10">
-                            <Link href="/contact">
-                                <Button
-                                    variant="accent"
-                                    size="lg"
-                                    className="group"
-                                >
+                            <Button
+                                asChild
+                                variant="accent"
+                                size="lg"
+                                className="group"
+                            >
+                                <Link href="/contact">
                                     Get a Custom Quote
                                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                </Button>
-                            </Link>
+                                </Link>
+                            </Button>
                         </div>
                     </Reveal>
                 </div>

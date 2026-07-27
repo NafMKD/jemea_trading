@@ -79,7 +79,7 @@ export function Navbar() {
                         <ThemeToggle />
                         <Link
                             href="/contact"
-                            className="hidden min-h-10 cursor-pointer items-center justify-center bg-[var(--accent)] px-5 font-body text-xs font-semibold tracking-[0.12em] text-white uppercase transition-all duration-200 hover:opacity-90 hover:shadow-lg md:inline-flex"
+                            className="hidden min-h-10 cursor-pointer items-center justify-center bg-[var(--accent)] px-5 font-body text-xs font-semibold tracking-[0.12em] text-white uppercase transition-[background-color,opacity,box-shadow] duration-200 hover:opacity-90 hover:shadow-lg md:inline-flex"
                         >
                             Get a Quote
                         </Link>
