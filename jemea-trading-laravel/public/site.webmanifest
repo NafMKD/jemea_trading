@@ -1,0 +1,21 @@
+{
+    "name": "Jemea Trading PLC",
+    "short_name": "Jemea Trading",
+    "description": "Ethiopian import, export and global trading company",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f6f8f9",
+    "theme_color": "#2299aa",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

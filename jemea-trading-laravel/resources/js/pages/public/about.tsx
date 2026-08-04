@@ -1,8 +1,9 @@
-import { Head, Link } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Target, Eye, Heart, Leaf } from 'lucide-react';
 import { Reveal } from '@/components/public/reveal';
 import { SectionHeading } from '@/components/public/section-heading';
+import { SeoHead } from '@/components/public/seo-head';
 import { Button } from '@/components/public/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -59,13 +60,7 @@ const timeline = [
 export default function AboutPage() {
     return (
         <>
-            <Head>
-                <title>About Us | Jemea Trading PLC</title>
-                <meta
-                    name="description"
-                    content="Learn about Jemea Trading PLC, our Ethiopian roots, global trade experience, values, mission, and commitment to export quality."
-                />
-            </Head>
+            <SeoHead />
             {/* ===== HERO ===== */}
             <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
                 <div className="absolute inset-0 bg-[var(--hero-bg)]" />

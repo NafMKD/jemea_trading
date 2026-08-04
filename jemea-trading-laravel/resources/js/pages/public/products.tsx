@@ -1,8 +1,9 @@
-import { Head, Link } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Reveal } from '@/components/public/reveal';
+import { SeoHead } from '@/components/public/seo-head';
 import { Button } from '@/components/public/ui/button';
 import {
     Dialog,
@@ -187,13 +188,7 @@ export default function ProductsPage() {
 
     return (
         <>
-            <Head>
-                <title>Products | Jemea Trading PLC</title>
-                <meta
-                    name="description"
-                    content="Explore Jemea Trading PLC's Ethiopian coffee, oil seeds, pulses, agricultural exports, polymers, and vehicle import services."
-                />
-            </Head>
+            <SeoHead />
             {/* ===== HERO ===== */}
             <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
                 <div className="absolute inset-0 bg-[var(--hero-bg)]" />

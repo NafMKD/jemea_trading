@@ -1,4 +1,4 @@
-import { Head, useForm } from '@inertiajs/react';
+import { useForm } from '@inertiajs/react';
 import { motion } from 'framer-motion';
 import {
     Phone,
@@ -14,6 +14,7 @@ import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { Reveal } from '@/components/public/reveal';
 import { SectionHeading } from '@/components/public/section-heading';
+import { SeoHead } from '@/components/public/seo-head';
 import { Button } from '@/components/public/ui/button';
 import { Input } from '@/components/public/ui/input';
 import { Textarea } from '@/components/public/ui/textarea';
@@ -108,13 +109,7 @@ export default function ContactPage({
 
     return (
         <>
-            <Head>
-                <title>Contact Us | Jemea Trading PLC</title>
-                <meta
-                    name="description"
-                    content="Contact Jemea Trading PLC about sourcing premium Ethiopian agricultural exports, import solutions, quantities, and delivery requirements."
-                />
-            </Head>
+            <SeoHead />
             {/* ===== HERO ===== */}
             <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
                 <div className="absolute inset-0 bg-[var(--hero-bg)]" />

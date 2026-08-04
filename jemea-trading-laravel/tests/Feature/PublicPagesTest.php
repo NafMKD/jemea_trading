@@ -31,6 +31,36 @@ class PublicPagesTest extends TestCase
         ];
     }
 
+    public function test_public_pages_include_server_rendered_seo_metadata(): void
+    {
+        $this->get('/products')
+            ->assertOk()
+            ->assertSee('Ethiopian Coffee, Seeds &amp; Import-Export Products | Jemea Trading', false)
+            ->assertSee('data-inertia="description"', false)
+            ->assertSee('href="'.url('/products').'" data-inertia="canonical"', false)
+            ->assertSee('application/ld+json', false)
+            ->assertSee('max-image-preview:large', false);
+    }
+
+    public function test_sitemap_lists_all_public_pages(): void
+    {
+        $this->get('/sitemap.xml')
+            ->assertOk()
+            ->assertHeader('Content-Type', 'application/xml; charset=UTF-8')
+            ->assertSee('<loc>'.url('/').'</loc>', false)
+            ->assertSee('<loc>'.url('/products').'</loc>', false)
+            ->assertDontSee('/admin');
+    }
+
+    public function test_robots_file_allows_public_pages_and_points_to_sitemap(): void
+    {
+        $this->get('/robots.txt')
+            ->assertOk()
+            ->assertSee('Allow: /', false)
+            ->assertSee('Disallow: /admin', false)
+            ->assertSee('Sitemap: '.route('seo.sitemap'), false);
+    }
+
     public function test_contact_page_accepts_a_known_product_interest(): void
     {
         $this->get('/contact?product=pigeon-pea')

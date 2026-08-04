@@ -1,4 +1,4 @@
-import { Head, Link } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import {
     Globe,
@@ -12,6 +12,7 @@ import { useRef } from 'react';
 import { ProductCard } from '@/components/public/product-card';
 import { Reveal } from '@/components/public/reveal';
 import { SectionHeading } from '@/components/public/section-heading';
+import { SeoHead } from '@/components/public/seo-head';
 import { Button } from '@/components/public/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -99,13 +100,7 @@ export default function HomePage() {
 
     return (
         <>
-            <Head>
-                <title>Jemea Trading PLC | Ethiopian Export Excellence</title>
-                <meta
-                    name="description"
-                    content="Exporting Ethiopia's finest coffee, oil seeds, and agricultural products to the world. Quality, reliability, and global professionalism."
-                />
-            </Head>
+            <SeoHead />
             {/* ===== HERO SECTION ===== */}
             <section
                 ref={heroRef}
