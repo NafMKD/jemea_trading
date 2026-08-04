@@ -115,10 +115,10 @@ export function Footer() {
                             <li className="flex items-center gap-3">
                                 <Mail className="h-4 w-4 shrink-0 text-brand-400" />
                                 <a
-                                    href="mailto:Jemeaplc@gmail.com"
+                                    href="mailto:info@jemeatrading.com"
                                     className="text-sm text-white/65 transition-colors hover:text-brand-400"
                                 >
-                                    Jemeaplc@gmail.com
+                                    info@jemeatrading.com
                                 </a>
                             </li>
                         </ul>

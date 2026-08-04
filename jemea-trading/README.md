@@ -30,7 +30,7 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your-email@gmail.com
 SMTP_PASS=your-app-password
-CONTACT_EMAIL=Jemeaplc@gmail.com
+CONTACT_EMAIL=info@jemeatrading.com
 ```
 
 ## Pages

@@ -39,7 +39,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    lines: ["Jemeaplc@gmail.com"],
+    lines: ["info@jemeatrading.com"],
   },
   {
     icon: Clock,

@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
 
     const mailOptions = {
       from: `"Jemea Trading Website" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_EMAIL || "Jemeaplc@gmail.com",
+      to: process.env.CONTACT_EMAIL || "info@jemeatrading.com",
       replyTo: email,
       subject: `New Inquiry from ${name}${company ? ` (${company})` : ""}`,
       html: `
